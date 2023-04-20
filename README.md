@@ -24,53 +24,11 @@ Cada facción puede crear una de las siguientes unidades, cada una con su coste 
 
 ## Diseño de la solución
 
-Lo que vamos a realizar para resolver esta práctica es completar todos los scripts que hay en el proyecto sin completar, como el comportamiento del público para que huya cuand cae la lámpara correspondiente, y vuelva cuando la lámpara se encienda.
+En esta práctica lo principal a lo que nos vamos a poder dedicar va a ser remodelar y expandir una de las IA como si fuera una nueva, la cual diseñaremos con un objetivo principal en mente: competencia. Nuestra IA va a tener que ser lo suficientemente inteligente como para poder empezar en cualquier situación, no perder el tiempo y optimizar al máximo los recursos. Esto se hará en el archivo RTSAI Controller GXX.
 
-También habrá que completar los scripts que utiliza el árbol de comportamiento del fantasma para que tenga el comportamiento pedido
+Además de esto, habrá que implementar un visualizador del mapa de influencia dinámico, que vaya actualizándose a medida que las zonas cambian de prioridad. Esto se realizará en RTS Value Map.
+También crearemos nuevos escenarios de guerra diferentes, que servira para comprobar la inteligencia y robustez de nuestra IA (ademas de aportar variedad al juego). Estos escenarios los realizaremos como escenas apartes.
 
-La cantante le queda por implementar los scripts que definen sus comportamientos que estan definidos por una máquina de estados
-
-Público:
-```mermaid
-stateDiagram
-    
-    VerEspectáculo --> Salir : La lámpara cae
-    Salir --> EsperarVestíbulo
-    EsperarVestíbulo --> Entrar: La lámpara es recogida
-    Entrar --> VerEspectáculo
-   
-```
-
-Cantante:
-```mermaid
-stateDiagram
-    
-    Cantar --> Bambalinas 
-    Bambalinas --> Cantar 
-    Cantar --> Llevada : El fantasma la rapta 
-    Bambalinas --> Llevada : El fantasma la rapta
-    Llevada --> Volver : El fantasma/vizconde la suelta en zona reconocible
-    Llevada --> Desorientada : El fantasma/vizconde la suelta en zona no reconocible
-    Desorientada --> Llevada : El fantasma/vizconde la recoge
-    Volver --> Cantar : Si estaba cantando
-    Volver --> Bambalinas : Si no estaba cantando
-   
-```
-Fantasma:
-
-```mermaid
-stateDiagram
-
-    Buscar --> TirarLampara : Hay publico
-    TirarLampara --> Capturar : Se va el publico
-    Buscar --> Capturar : No hay publico
-    Capturar --> LlevarCelda 
-    LlevarCelda --> CerrarCelda : Llega a la celda
-    LlevarCelda --> Buscar : El vizconde la salva
-    CerrarCelda --> Buscar : El vizconde la salva
-```
-
-Para dibujar espacios de coordenadas 2D con puntos y vectores, se podría incrustar una imagen de Google Draw, o intentar incrustarlo en el repositorio también con Mermaid. 
 
 ## Pruebas y métricas
 
