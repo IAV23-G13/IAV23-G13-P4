@@ -82,22 +82,19 @@ Se han realizado las siguientes ampliaciones :trollface:
 
 ## Producción
 
-Las tareas se han realizado y el esfuerzo ha sido repartido entre los autores. Esto se podrá documentar en una tabla como esta o usando la [pestaña de Proyectos](https://github.com/orgs/Narratech/projects/4/views/1) de GitHub.
-
 | Estado  |  Tarea  |  Fecha  |  
 |:-:|:--|:-:|
-| ✔ | Diseño: Primer borrador | 23-03-2023 |
+| ✔ | Diseño: Primer borrador | 20-04-2023 |
 | ✔ | Característica A: Mundo virtual, movimiento e interaccion con entorno | ... |
-| ✔ | Característica B: Logica del público| ... |
-| ✔ | Característica C: Maquina de estados cantante| ... |
-| ✔ | Característica D: Arbol de comportamiento fantasma| ... |
-| ✔ | Característica E: Sistema gestion sensorial fantasma| ... |
+| :x: | Característica B: Controlador automatico para IA vs jugador e IA vs ella misma| ... |
+| :x: | Característica C: visualizar y actualizar mapa de influencia| ... |
+| :x: | Característica D: realizacion constante de acciones y decisión de reacción| ... |
+| :x: | Característica E: Sistema de gestión inteligente teniendo en cuenta todo el entorno| ... |
 |  | OPCIONAL |  |
-| :x: | Escenario complejo, portales | ... |
-| :x: | Escenario mecanismos complejos | ... |
-| :x: | Fantasma mas inteligente | ... |
+| :x: | Mapa nuevo | ... |
+| :x: | Añadir un tercer peloton | ... |
+| :x: | Nuevo tipo de unidad: espia; que recibe informacion extra del enemigo | ... |
 | :x: | Mejor gestion sensorial | ... |
-| :x: | Más personajes | ... |
 
 ## Referencias
 
