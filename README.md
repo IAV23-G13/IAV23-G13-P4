@@ -18,7 +18,9 @@ Las dos facciones son controladas por un GameManager que guarda el estado de la 
 Aparte de un script que permite controlar una facción al jugador, también podemos encontrar entre los assets unos scripts que controlan automáticamente una facción al añadirse estas mismas como controlador.
 
 Cada facción puede crear una de las siguientes unidades, cada una con su coste diferente:
-- Cosechadora: Esta unidad se dedica a ir 
+- Cosechadora (10000): Esta unidad se dedica a ir a una zona de recursos y una vez a dejado de recolectar volverá a la base a dejar los recursos y transformarlos en dinero.
+- Explorador (15000): Es básicamente un soldado de a pie, con muy poca vida y muy poca capacidad de daño.
+- Destructor (30000): Una unidad de ataque mucho mas poderosa que un explorador.
 
 ## Diseño de la solución
 
