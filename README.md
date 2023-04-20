@@ -49,16 +49,18 @@ Se han realizado las siguientes ampliaciones :trollface:
 | :x: | Característica D: realizacion constante de acciones y decisión de reacción| ... |
 | :x: | Característica E: Sistema de gestión inteligente teniendo en cuenta todo el entorno| ... |
 |  | OPCIONAL |  |
-| :x: | Mapa nuevo | ... |
-| :x: | Añadir un tercer peloton | ... |
-| :x: | Nuevo tipo de unidad: espia; que recibe informacion extra del enemigo | ... |
-| :x: | Mejor gestion sensorial | ... |
+| :x: | Gusanos de arena | ... |
+| :x: | Realización de jugadas | ... |
+| :x: | Extender inteligencia del controlador | ... |
+| :x: | Nuevo análisis táctico distinto al del mapa de influencia | ... |
+| :x: | Localizar puntos de ruta | ... |
+| :x: | Mejorar aspectos de movimiento y navegacion | ... |
+| :x: | Mejorar aspectos de interfaz y control | ... |
+| :x: | Mejorar aspectos de escenario | ... |
 
 ## Referencias
 
 Los recursos de terceros utilizados son de uso público.
 
 - *AI for Games*, Ian Millington.
-- [Kaykit Medieval Builder Pack](https://kaylousberg.itch.io/kaykit-medieval-builder-pack)
-- [Kaykit Dungeon](https://kaylousberg.itch.io/kaykit-dungeon)
-- [Kaykit Animations](https://kaylousberg.itch.io/kaykit-animations)
+
