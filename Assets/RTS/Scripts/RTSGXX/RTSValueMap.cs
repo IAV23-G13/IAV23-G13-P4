@@ -3,10 +3,10 @@
    http://www.federicopeinado.com
 
    Este fichero forma parte del material de la asignatura Inteligencia Artificial para Videojuegos.
-   Esta asignatura se imparte en la Facultad de Informática de la Universidad Complutense de Madrid (España).
+   Esta asignatura se imparte en la Facultad de InformÃ¡tica de la Universidad Complutense de Madrid (EspaÃ±a).
 
    Autores originales: Opsive (Behavior Designer Samples)
-   Revisión: Federico Peinado 
+   RevisiÃ³n: Federico Peinado 
    Contacto: email@federicopeinado.com
 */
 
@@ -32,7 +32,18 @@ namespace es.ucm.fdi.iav.rts.gxx
             vmap = RTSGameManager.Instance.getValueMap();
             resetmap();
 
-            // IMPLEMENTAR CÓMO SE CONVIERTEN LOS DATOS BRUTOS EN UN MAPA DE INFLUENCIA (VALOR)
+            // IMPLEMENTAR CÃ“MO SE CONVIERTEN LOS DATOS BRUTOS EN UN MAPA DE INFLUENCIA (VALOR)
+            
+            for (int i = 0; i < vmap.GetLength(0); i++)
+            {
+                for(int j=0; j < vmap.GetLength(1); j++)
+                {
+                    //if (vmap[i, j].Contains())
+                    //{
+                    //    map[i, j] =
+                    //}
+                }
+            }
    
             return map;
         }
