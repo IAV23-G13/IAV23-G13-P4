@@ -88,6 +88,40 @@ namespace es.ucm.fdi.iav.rts.gxx
         protected override void Think()
         {
             // IMPLEMENTAR AQUÍ VUESTRA LÓGICA, LLAMANDO A TODOS LOS MÉTODOS AUXILIARES QUE QUERÁIS
+            //Caso fuerza no beligerante
+            //Si tiene sufucientes recursos como objetivo principal crea un explorador,
+            //pero si hay x nº de exploradores mas que de extractores, entonces crea un extractor
+            //en el caso de que haya un 50% de exploradores o el doble de extractores que de soldados 
+            //este creará entonces un soldado
+
+            //Culo veo culo quiero
+            //la tactica de copiar todo lo que hace el enemigo, si crea soldados, yo tambien los creo
+            //si crea otro tipo de unidad lo mismo, sin embargo debe tener en cuenta la cantidad de recursos
+            //pues puede ser que algun extractor tarde mas o menos en conseguirlos que el enemigo
+
+            //Tomar la iniciativa
+            //Una vez se tienen recursos crea soldados que envia directamente a atacar,
+            //esto lo puede dejar expuesto debido a la falta de personal que pueda tener
+
+            //De todo un poco
+            //Cuando se tiene sufucientes recursos crea la unidad que menos haya
+
+            //Casos para atacar
+
+            //YOLO
+            //Nada mas ser creada la unidad que pueda ser ofensiva se envía contra el enemigo
+            
+            //La union hace la fuerza
+            //Cuando exista cierto nº de tropas estas tomarán la decision de ir juntas a atacar
+            //sino se quedan en la base para defender
+
+            //He vuelto...por sexta vez
+            //una vez se tengan suficientes unidades ir enviandolas una a una, de forma que si una es destruida,
+            //la siguiente inicia el ataque
+
+            //Te toca en este grupo
+            //una vez se tiene cierto nº de unidades ofensivas se envía solo un grupo a atacar,
+            //mientras el otro se queda en base defendiendo 
         }
 
         // ..............
