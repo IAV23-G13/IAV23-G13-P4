@@ -3,10 +3,10 @@
    http://www.federicopeinado.com
 
    Este fichero forma parte del material de la asignatura Inteligencia Artificial para Videojuegos.
-   Esta asignatura se imparte en la Facultad de Inform·tica de la Universidad Complutense de Madrid (EspaÒa).
+   Esta asignatura se imparte en la Facultad de Inform√°tica de la Universidad Complutense de Madrid (Espa√±a).
 
    Autores originales: Opsive (Behavior Designer Samples)
-   RevisiÛn: Federico Peinado 
+   Revisi√≥n: Federico Peinado 
    Contacto: email@federicopeinado.com
 */
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ using UnityEngine;
 
 namespace es.ucm.fdi.iav.rts.gxx
 {
-    // Mapa de fuerza militar mÌa y de mi enemigo
+    // Mapa de fuerza militar m√≠a y de mi enemigo
     public class RTSForceMap : RTSInfluenceMap
     {
         List<RTSWorldToMap.Info>[,] fmap;
@@ -31,12 +31,23 @@ namespace es.ucm.fdi.iav.rts.gxx
 
         public override float[,] GetMap()
         {
-            //usado para almacenar las influencias extendidas, para que estas no afecten otros c·lculos incompletos
+            //usado para almacenar las influencias extendidas, para que estas no afecten otros c√°lculos incompletos
             float[,] auxmap = new float[w, h];
             fmap = RTSGameManager.Instance.getForceMap();
             resetmap();
 
-            // IMPLEMENTAR C”MO SE CONVIERTEN LOS DATOS BRUTOS EN UN MAPA DE INFLUENCIA (FUERZA), LLAMANDO A LOS M…TODOS AUXILIARES QUE QUER¡IS
+            // IMPLEMENTAR C√ìMO SE CONVIERTEN LOS DATOS BRUTOS EN UN MAPA DE INFLUENCIA (FUERZA), LLAMANDO A LOS M√âTODOS AUXILIARES QUE QUER√ÅIS
+            //revisa update de rtsworldtomap
+            for (int i = 0; i < fmap.GetLength(0); i++)
+            {
+                for (int j = 0; j < fmap.GetLength(1); j++)
+                {
+                    //if (fmap[i, j].Contains())
+                    //{
+                    //    map[i, j] =
+                    //}
+                }
+            }
 
             return map;
         }
