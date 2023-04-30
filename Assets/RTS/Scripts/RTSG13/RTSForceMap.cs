@@ -10,6 +10,7 @@
    Contacto: email@federicopeinado.com
 */
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace es.ucm.fdi.iav.rts.gxx
@@ -42,7 +43,8 @@ namespace es.ucm.fdi.iav.rts.gxx
             {
                 for (int j = 0; j < fmap.GetLength(1); j++)
                 {
-                    //if (fmap[i, j].Contains())
+                    //no se como hacer para que detecte el objeto;
+                    //if (fmap[i, j].Contains()
                     //{
                     //    map[i, j] =
                     //}
