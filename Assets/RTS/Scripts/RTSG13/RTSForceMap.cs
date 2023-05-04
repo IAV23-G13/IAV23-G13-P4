@@ -43,11 +43,25 @@ namespace es.ucm.fdi.iav.rts.gxx
             {
                 for (int j = 0; j < fmap.GetLength(1); j++)
                 {
-                    //no se como hacer para que detecte el objeto;
-                    //if (fmap[i, j].Contains()
-                    //{
-                    //    map[i, j] =
-                    //}
+                    
+                    List<RTSWorldToMap.Info> auxmap2 = fmap[i, j];
+                    foreach(RTSWorldToMap.Info auxmapElem in auxmap2)
+                    {
+                        if (auxmapElem.getTeam() == index)
+                        {
+                            map[i, j] += auxmapElem.getTotal();
+                        }
+                        //SUMA DE FUERZAS ENTRE TODOS LOS EQUIPOS
+                        //INFLUYE EN EL RESTO DEL MAPA, TENER EN CUENTA LAS CONTIGUAS AL REALIZAR ATAQUES
+                        //Ej: en la casilla hay muchas fuerzas enemigas pero en la de al lado no, debe detectar la casilla donde hay fuerzas
+                        //comprobar casillas adyacentes en busca de unidades aliadas o enemigas
+                        else if (auxmapElem.getTeam() != index)
+                        {
+
+                        }
+                        
+                    }
+                    
                 }
             }
 

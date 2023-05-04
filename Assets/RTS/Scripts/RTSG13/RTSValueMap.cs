@@ -38,10 +38,14 @@ namespace es.ucm.fdi.iav.rts.gxx
             {
                 for(int j=0; j < vmap.GetLength(1); j++)
                 {
-                    //if (vmap[i, j].Contains())
-                    //{
-                    //    map[i, j] =
-                    //}
+                    List<RTSWorldToMap.Info> auxmap2 = vmap[i, j];
+                    foreach (RTSWorldToMap.Info auxmapElem in auxmap2)
+                    {
+                        if (auxmapElem.getTeam() == index)
+                        {
+                            map[i, j] += auxmapElem.getTotal();
+                        }
+                    }
                 }
             }
    

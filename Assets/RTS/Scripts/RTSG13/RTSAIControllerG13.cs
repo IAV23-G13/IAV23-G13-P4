@@ -17,7 +17,7 @@ namespace es.ucm.fdi.iav.rts.gxx
     using BehaviorDesigner.Runtime.Tactical.Tasks;
     using UnityEngine;
 
-    public class RTSAIControllerGXX : RTSAIController
+    public class RTSAIControllerG13 : RTSAIController
     {
         private int MyIndex { get; set; }
         private BaseFacility MyBaseFacility { get; set; }
