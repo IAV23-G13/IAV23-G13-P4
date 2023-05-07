@@ -59,6 +59,18 @@ namespace es.ucm.fdi.iav.rts.gxx
         // Última unidad creada
         private Unit LastUnit { get; set; }
 
+
+        private List<BaseFacility> facilities;
+        private List<ExtractionUnit> unitsExtractList;
+        private List<ExplorationUnit> unitsExploreList;
+        private List<DestructionUnit> unitsDestroyerList;
+
+        //enemigos
+        
+        private List<ExtractionUnit> enemyUnitsExtractList;
+        private List<ExplorationUnit> enemyUnitsExploreList;
+        private List<DestructionUnit> enemyUnitsDestroyerList;
+
         // Despierta el controlado y configura toda estructura interna que sea necesaria
         // Se usan las teclas F (Fremen) o H (Harkonnen) según sea mi bando... y V para el valor de la casilla
         private void Start()
@@ -82,46 +94,65 @@ namespace es.ucm.fdi.iav.rts.gxx
             w = RTSGameManager.Instance.getWidth();
             h = RTSGameManager.Instance.getHeight();
             counter = 0;
+
+
+            facilities = RTSGameManager.Instance.GetBaseFacilities(MyIndex);
+            unitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(MyIndex);
+            unitsExploreList = RTSGameManager.Instance.GetExplorationUnits(MyIndex);
+            unitsExtractList = RTSGameManager.Instance.GetExtractionUnits(MyIndex);
+
+            enemyUnitsDestroyerList = RTSGameManager.Instance.GetDestructionUnits(OtherIndexes[0]);
+            enemyUnitsExploreList = RTSGameManager.Instance.GetExplorationUnits(OtherIndexes[0]);
+            enemyUnitsExtractList = RTSGameManager.Instance.GetExtractionUnits(OtherIndexes[0]);
+
         }
 
         // El método de pensar que sobreescribe e implementa el controlador, para percibir (hacer mapas de influencia, etc.) y luego ACTUAR.
         protected override void Think()
         {
             // IMPLEMENTAR AQUÍ VUESTRA LÓGICA, LLAMANDO A TODOS LOS MÉTODOS AUXILIARES QUE QUERÁIS
-            //Caso fuerza no beligerante
-            //Si tiene sufucientes recursos como objetivo principal crea un explorador,
-            //pero si hay x nº de exploradores mas que de extractores, entonces crea un extractor
-            //en el caso de que haya un 50% de exploradores o el doble de extractores que de soldados 
-            //este creará entonces un soldado
-
-            //Culo veo culo quiero
-            //la tactica de copiar todo lo que hace el enemigo, si crea soldados, yo tambien los creo
-            //si crea otro tipo de unidad lo mismo, sin embargo debe tener en cuenta la cantidad de recursos
-            //pues puede ser que algun extractor tarde mas o menos en conseguirlos que el enemigo
-
-            //Tomar la iniciativa
-            //Una vez se tienen recursos crea soldados que envia directamente a atacar,
-            //esto lo puede dejar expuesto debido a la falta de personal que pueda tener
-
-            //De todo un poco
-            //Cuando se tiene sufucientes recursos crea la unidad que menos haya
-
-            //Casos para atacar
-
-            //YOLO
-            //Nada mas ser creada la unidad que pueda ser ofensiva se envía contra el enemigo
             
-            //La union hace la fuerza
+           //existen bases
+            if (facilities.Count>0)
+            {
+                //decision de creacion de unidades
+                if (unitsDestroyerList.Count<unitsExploreList.Count+unitsExtractList.Count)
+                {
+                    if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.DestructionUnitCost)
+                        CreateDestructor();
+                }
+                else if (unitsExtractList.Count < unitsExploreList.Count)
+                {
+                    if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExtractionUnitCost)
+                        CreateExtractor();
+                }
+                else
+                    if (RTSGameManager.Instance.GetMoney(MyIndex) > RTSGameManager.Instance.ExplorationUnitCost)
+                    CreateExplorator();
+            }
+
+
             //Cuando exista cierto nº de tropas estas tomarán la decision de ir juntas a atacar
             //sino se quedan en la base para defender
 
-            //He vuelto...por sexta vez
-            //una vez se tengan suficientes unidades ir enviandolas una a una, de forma que si una es destruida,
-            //la siguiente inicia el ataque
+            
+            if (unitsDestroyerList.Count>5 && unitsExploreList.Count > 5)
+            {
+                for(int i = 0; i < 3; i++) { 
+                   
+                    RTSGameManager.Instance.MoveUnit(this, unitsDestroyerList[i], OtherBaseFacility.transform);
+                   
+                    RTSGameManager.Instance.MoveUnit(this, unitsExploreList[i], OtherBaseFacility.transform);
+                }
 
-            //Te toca en este grupo
-            //una vez se tiene cierto nº de unidades ofensivas se envía solo un grupo a atacar,
-            //mientras el otro se queda en base defendiendo 
+            }
+            //mientras no sea el maximo numero de unidades de exploracion o de destructores, los extractores sguen yendo a recoger
+            if (unitsExploreList.Count < RTSGameManager.Instance.ExplorationUnitsMax|| unitsDestroyerList.Count < RTSGameManager.Instance.DestructionUnitsMax)
+            {
+                for(int i = 0; i < unitsExtractList.Count; i++) { 
+                RTSGameManager.Instance.MoveUnit(this, unitsExtractList[i], MyProcessingFacility.transform);
+                }
+            }
         }
 
         // ..............
